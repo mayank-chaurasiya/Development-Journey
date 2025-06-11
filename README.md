@@ -1,4 +1,4 @@
-# Delta Web Development Projects
+# Web Development
 
 This repository is a comprehensive workspace for learning and practicing full-stack web development. It contains a variety of projects, exercises, and code samples covering both frontend and backend technologies.
 
