@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forms</title>
+  </head>
+  <body>
+    <form action="/server">
+      <label for="username">Username : </label>
+      <input
+        type="text"
+        placeholder="enter username"
+        id="username"
+        name="username"
+      />
+      <br />
+      <label for="password">password : </label>
+      <input type="password" placeholder="enter password" id="password" />
+      <br />
+      <button>submit</button>
+    </form>
+    <hr />
+
+    <form action="https://www.youtube.com/results">
+      <input type="text" placeholder="search in youtube" name="search_query" />
+      <button>search</button>
+    </form>
+
+    <hr />
+
+    <form action="https://www.google.com/search">
+      <input type="text" placeholder="search in google" name="q" />
+      <button>Google</button>
+    </form>
+    <hr />
+
+    <form action="/server">
+      <input type="checkbox" id="age" name="age" checked />
+      <label for="age"> I am 18+</label>
+      <br />
+      <input type="radio" name="fruit" id="apple" value="apple" />
+      <label for="apple">apple</label>
+      <input type="radio" name="fruit" id="mango" value="mango" />
+      <label for="apple">Mango</label>
+      <input type="radio" name="fruit" id="banana" value="banana" />
+      <label for="apple">Banana</label>
+      <input type="radio" name="fruit" id="guava" value="guava" />
+      <label for="apple">Guava</label>
+
+      <hr />
+
+      <div>
+        choose your subjects
+        <input type="checkbox" id="math" name="subjects" value="math" />
+        <label for="math">Math</label>
+        <input type="checkbox" id="science" name="subjects" value="sci" />
+        <label for="science">science</label>
+        <input type="checkbox" id="physics" name="subjects" value="eng" />
+        <label for="physics">physics</label>
+      </div>
+
+      <hr />
+
+      <div>
+        select your state -
+        <select name="state" id="state">
+          <option>select</option>
+          <option value="Bihar" selected>Bihar</option>
+          <option value="Uttarpradesh">Uttarpradesh</option>
+          <option value="Jammu & kashmir">Jammu & kashmir</option>
+          <option value="Goa">Goa</option>
+          <option value="Gujrat">Gujrat</option>
+        </select>
+      </div>
+      <br />
+
+      <div>
+        <label for="volume">Select your volume</label>
+        <input
+          type="range"
+          id="volume"
+          min="0"
+          max="100"
+          name="volume"
+          step="10"
+        />
+      </div>
+      <br />
+
+      <div>
+        <label for="feedback">Please provide your valuable feedback: </label>
+        <textarea
+          name="feedback"
+          id="feedback"
+          placeholder="write your feedback here"
+        ></textarea>
+      </div>
+      <button>submit</button>
+    </form>
+
+    <hr />
+
+    <!-- Practice Question 9 -->
+    <h2>Rgistration Form</h2>
+    <form action="/server">
+      <input
+        type="text"
+        name="FirstName"
+        id="FirstName"
+        placeholder="First Name"
+      />
+      <input
+        type="text"
+        name="LastName"
+        id="LastName"
+        placeholder="Last Name"
+      />
+      <br />
+      <div>
+        Please select your gender
+        <select name="gender" id="gender">
+          <option value="Male" selected>Male</option>
+          <option value="Female">Female</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+      <div>
+        Do you agree to all temrs of services?
+        <input type="checkbox" name="Terms" id="Terms" checked />
+        <label for="Terms"> Yes,, I agree</label>
+      </div>
+      <button>Register</button>
+    </form>
+  </body>
+</html>
