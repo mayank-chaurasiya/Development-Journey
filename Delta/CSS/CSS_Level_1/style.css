@@ -1,0 +1,38 @@
+* {
+    font-family: Georgia;
+}
+
+#logo {
+    font-family: League spartan;
+    color: #ffa511;
+    text-align: center;
+    font-size: 55px;
+    font-weight: 900;
+    text-spacing-trim: 2px;
+    line-height: 1.5;
+    text-decoration: double underline aqua;
+    text-transform: uppercase;
+}
+
+#poem {
+    text-align: center;
+    line-height: 30px;
+}
+
+#poem p {
+    color: #75260e;
+}
+
+#poem a {
+    text-decoration: none;
+    color: rgb(0,255,0);
+}
+
+#poem button {
+    background-color: white;
+    color: blueviolet;
+}
+
+textarea {
+    color: #000;
+}
