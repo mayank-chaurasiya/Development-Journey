@@ -1,0 +1,26 @@
+div {
+    height: 100px;
+    width: 600px;
+    background-color: bisque;
+    border-width: 3px;
+    border-style: solid;
+    border-color: blue;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    border-width: 2px;
+    border-style: dashed;
+    border-color: purple;
+}
+
+button:hover {
+    border: 2px solid pink;
+    border-radius: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: bisque;
+}
+
