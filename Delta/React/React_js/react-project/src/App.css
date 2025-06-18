@@ -1,0 +1,21 @@
+.heading {
+    font-weight: 700;
+    text-align: center;
+}
+
+.container {
+    border: 2px solid black;
+    font-weight: 600;
+    margin: 15px;
+    width: 50%;
+    border-radius: 5px;
+    min-width: 500px;
+}
+
+.buy-button {
+    float: right;
+}
+
+.foodInput {
+    width: 100%;
+}
