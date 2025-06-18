@@ -1,0 +1,26 @@
+h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    margin: 2rem;
+}
+
+input {
+    width: 100%;
+}
+
+.items-container {
+    text-align: left;
+}
+
+.items-row {
+    margin: 0.625rem 0.312rem;
+}
+
+.custom-button {
+    min-width: 5rem;
+}
+
+.ln-h {
+    display: flex;
+    align-items: center;
+}
