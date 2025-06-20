@@ -6,23 +6,22 @@ import FoodInput from "./components/FoodInput";
 import { useState } from "react";
 
 function App() {
-  let foodItems = ["Fish", "Lentils", "curd", "Egg", "Roti/Rice"];
-  // let foodItems = [];
+  let [foodItems, setFoodItems] = useState([]);
 
-  let [currStateVal, setTextState] = useState("newly added items");
-
-  console.log(`current value of textState: ${currStateVal}`);
-
-  const handleOnChange = (event) => {
-    console.log(event.target.value);
-    setTextState(event.target.value);
+  const onKeyDown = (event) => {
+    if (event.key === "Enter") {
+      let newFoodItem = event.target.value;
+      let newItems = [...foodItems, newFoodItem];
+      setFoodItems(newItems);
+      event.target.value = "";
+    }
   };
+
   return (
     <>
       <Container>
         <h1 className="heading">Healthy Foods</h1>
-        <FoodInput handleOnChange={handleOnChange}></FoodInput>
-        <p>{currStateVal}</p>
+        <FoodInput handleKeyDown={onKeyDown} />
         <ErrorMsg foods={foodItems} />
         <ListItems foods={foodItems} />
       </Container>
