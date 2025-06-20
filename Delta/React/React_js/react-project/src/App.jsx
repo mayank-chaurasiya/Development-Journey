@@ -25,12 +25,6 @@ function App() {
         <ErrorMsg foods={foodItems} />
         <ListItems foods={foodItems} />
       </Container>
-      {/* <Container>
-        <p>
-          Above is the list of healthy foods that are good for your health and
-          well being.
-        </p>
-      </Container> */}
     </>
   );
 }

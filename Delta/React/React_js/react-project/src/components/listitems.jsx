@@ -1,5 +1,13 @@
+import { useState } from "react";
 import Item from "./foods";
 const ListItems = ({ foods, buttonClicked }) => {
+  let [activeItems, setActiveItems] = useState([]);
+
+  let onBuyButton = (item, event) => {
+    let newItems = [...activeItems, item];
+    setActiveItems(newItems);
+  };
+
   return (
     <>
       <ul className="list-group">
@@ -7,7 +15,8 @@ const ListItems = ({ foods, buttonClicked }) => {
           <Item
             key={item}
             foodItems={item}
-            buttonClicked={() => console.log(`${item} to be bought`)}
+            bought={activeItems.includes(item)}
+            buttonClicked={(event) => onBuyButton(item, event)}
           ></Item>
         ))}
       </ul>
