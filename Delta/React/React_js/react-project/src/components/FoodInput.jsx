@@ -1,11 +1,11 @@
-const FoodInput = (props) => {
+const FoodInput = ({ handleKeyDown }) => {
   return (
     <>
       <input
         type="text"
         placeholder="Enter Food Item Here"
         className="foodInput mt-2 mb-3 form-control"
-        onChange={props.handleOnChange}
+        onKeyDown={handleKeyDown}
       />
     </>
   );
