@@ -1,4 +1,4 @@
-const ButtonsContainer = () => {
+const ButtonsContainer = ({ onButtonClick }) => {
   const buttonNames = [
     "C",
     "1",
@@ -22,7 +22,15 @@ const ButtonsContainer = () => {
     <>
       <div id="calc-buttons-container">
         {buttonNames.map((buttonName) => {
-          return <button className="calc-buttons">{buttonName}</button>;
+          return (
+            <button
+              className="calc-buttons"
+              key={buttonName}
+              onClick={() => onButtonClick(buttonName)}
+            >
+              {buttonName}
+            </button>
+          );
         })}
       </div>
     </>

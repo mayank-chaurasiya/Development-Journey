@@ -1,7 +1,12 @@
-const CalcScreen = () => {
+const CalcScreen = ({ calcValue }) => {
   return (
     <>
-      <input type="number" id="calc-screen" placeholder="00" />
+      <input
+        type="text"
+        id="calc-screen"
+        value={calcValue}
+        readOnly
+      />
     </>
   );
 };
