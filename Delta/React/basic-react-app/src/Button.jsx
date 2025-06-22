@@ -1,11 +1,16 @@
-function doSomething() {
+function printHello() {
   console.log("Hello");
+}
+
+function printBye() {
+  console.log("bye!");
 }
 
 export default function Button() {
   return (
     <div>
-      <button onClick={doSomething}>Click me!</button>
+      <button onClick={printHello}>Click me!</button>
+      <p onClick={printBye}>this paragraph is for event demo</p>
     </div>
   );
 }
