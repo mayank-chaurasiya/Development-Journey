@@ -1,13 +1,13 @@
 function handleFormSubmit(event) {
-  event.preventDefault();
+//   event.preventDefault();
   console.log("form was submitted");
 }
 
 export default function Form() {
   return (
-    <form action="">
+    <form action="" onSubmit={handleFormSubmit}>
       <input type="text" placeholder="write something" />
-      <button onClick={handleFormSubmit}>Submit</button>
+      <button>Submit</button>
     </form>
   );
 }
