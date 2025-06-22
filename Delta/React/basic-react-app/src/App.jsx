@@ -1,6 +1,7 @@
 import "./App.css";
 import ProductTab from "./ProductTab.jsx";
 import Button from "./Button.jsx";
+import Form from "./components/Form.jsx";
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <h2>Blockbuster Deals | Show Now</h2>
       <ProductTab />
       <Button />
+
+      <Form />
     </>
   );
 }
