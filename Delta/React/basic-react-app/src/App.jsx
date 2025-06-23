@@ -2,8 +2,7 @@ import "./App.css";
 import ProductTab from "./ProductTab.jsx";
 import Button from "./Button.jsx";
 import Form from "./components/Form.jsx";
-import Counter from "./components/Counter.jsx";
-
+import LikeButton from "./components/LikeButton.jsx";
 function App() {
   return (
     <>
@@ -13,7 +12,8 @@ function App() {
 
       <Form />
 
-      <Counter />
+      <br />
+      <LikeButton />
     </>
   );
 }
