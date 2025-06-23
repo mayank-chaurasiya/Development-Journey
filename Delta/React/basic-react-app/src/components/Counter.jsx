@@ -6,8 +6,12 @@ export default function Counter() {
   console.log(`count = ${count}`);
 
   let incCount = () => {
-    setCount(count + 1);
-    console.log(`inside incCount, count = ${count}`);
+    setCount((currCount) => {
+      return currCount + 1;
+    });
+    setCount((currCount) => {
+      return currCount + 1;
+    });
   };
 
   return (
