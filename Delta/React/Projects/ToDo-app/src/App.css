@@ -1,0 +1,13 @@
+.container {
+    margin: 80px;
+}
+
+input {
+    width: 60%;
+    font-size: 20px;
+}
+
+.add-button {
+    font-size: 20px;
+
+}
