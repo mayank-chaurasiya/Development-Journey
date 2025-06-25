@@ -31,6 +31,21 @@ export default function TodoList() {
     );
   };
 
+  let lowerCaseOne = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            task: todo.task.toLowerCase(),
+          };
+        } else {
+          return todo;
+        }
+      })
+    );
+  };
+
   return (
     <center>
       <h1>To Do App</h1>
@@ -59,11 +74,21 @@ export default function TodoList() {
               >
                 Delete
               </button>
+              <button
+                className="lowercase-btn"
+                onClick={() => {
+                  lowerCaseOne(todo.id);
+                }}
+              >
+                LowerCase
+              </button>
             </li>
           ))}
         </ul>
         <br />
-        <button onClick={upperCaseAll}>UpperCase All</button>
+        <button className="uppercase-btn" onClick={upperCaseAll}>
+          UpperCase All
+        </button>
       </div>
     </center>
   );
