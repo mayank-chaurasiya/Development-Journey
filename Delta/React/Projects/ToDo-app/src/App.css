@@ -1,14 +1,18 @@
 .container {
-    margin: 80px;
+    width: 50%;
+    margin: 50px;
     font-size: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
 }
 
 input {
     width: 60%;
     font-size: 20px;
+    margin-top: 18px;
 }
 
 .add-button {
     font-size: 20px;
-
+    margin-left: 10px;
 }
