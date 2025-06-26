@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <SearchBox />
-      {/* <InfoBox /> */}
+      <InfoBox />
     </>
   );
 }

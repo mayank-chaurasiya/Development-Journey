@@ -2,12 +2,13 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./SearchBox.css";
 import { useState } from "react";
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function SearchBox() {
   let [city, setCity] = useState("");
 
   const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-  const API_KEY = "7b4034c0471e1b0c50ff9b383850acf4";
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   let getWeatherInfo = async () => {
     let response = await fetch(
@@ -16,6 +17,7 @@ export default function SearchBox() {
     let jsonResponse = await response.json();
     console.log(jsonResponse);
     let result = {
+      city: city,
       temp: jsonResponse.main.temp,
       tempMin: jsonResponse.main.temp_min,
       tempMax: jsonResponse.main.temp_max,
