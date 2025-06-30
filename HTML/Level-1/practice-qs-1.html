@@ -14,25 +14,47 @@
         <span id="apple-img-container"></span>
       </li>
       <li>
-        Orange <button id="see-Orange">show Banana image</button>
+        Orange <button id="see-orange">show Orange image</button>
         <span id="orange-img-container"></span>
       </li>
-      <li>Mango</li>
+      <li>
+        Mango <button id="see-mango">show Mango image</button>
+        <span id="mango-img-container"></span>
+      </li>
     </ul>
   </body>
   <script>
-    document
-      .getElementById("see-apple")
-      .addEventListener("click", function (e) {
+    function setupFruitImage(buttonId, containerId, imgSrc, altText) {
+      document.getElementById(buttonId).addEventListener("click", function (e) {
         e.preventDefault();
-        const container = document.getElementById("apple-img-container");
+        const container = document.getElementById(containerId);
         if (!container.querySelector("img")) {
           const img = document.createElement("img");
-          img.src = "images/apple.jpg";
-          img.alt = "Apple";
+          img.src = imgSrc;
+          img.alt = altText;
           img.width = 100;
           container.appendChild(img);
         }
       });
+    }
+
+    setupFruitImage(
+      "see-apple",
+      "apple-img-container",
+      "images/apple.jpg",
+      "Apple"
+    );
+    setupFruitImage(
+      "see-orange",
+      "orange-img-container",
+      "images/oranges.png",
+      "Orange"
+    );
+    setupFruitImage(
+      "see-mango",
+      "mango-img-container",
+      "images/mango.jpg",
+      "Mango"
+    );
   </script>
 </html>
