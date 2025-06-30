@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice question</title>
+  </head>
+  <body>
+    <h1>List of Fruits</h1>
+    <br />
+    <ul>
+      <li>
+        Apple <button id="see-apple">show Apple image</button>
+        <span id="apple-img-container"></span>
+      </li>
+      <li>
+        Orange <button id="see-Orange">show Banana image</button>
+        <span id="orange-img-container"></span>
+      </li>
+      <li>Mango</li>
+    </ul>
+  </body>
+  <script>
+    document
+      .getElementById("see-apple")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        const container = document.getElementById("apple-img-container");
+        if (!container.querySelector("img")) {
+          const img = document.createElement("img");
+          img.src = "images/apple.jpg";
+          img.alt = "Apple";
+          img.width = 100;
+          container.appendChild(img);
+        }
+      });
+  </script>
+</html>
