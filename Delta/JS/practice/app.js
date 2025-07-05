@@ -865,15 +865,15 @@
 //   document.body.style.backgroundColor = "red";
 // });
 
-class User {
-  constructor(name, email) {
-    this.name = name;
-    this.email = email;
-  }
-  viewData() {
-    console.log(`student name -- ${this.name}, email -- ${this.email}`);
-  }
-}
+// class User {
+//   constructor(name, email) {
+//     this.name = name;
+//     this.email = email;
+//   }
+//   viewData() {
+//     console.log(`student name -- ${this.name}, email -- ${this.email}`);
+//   }
+// }
 
 // class Admin extends User {
 //   constructor(name, email) {
