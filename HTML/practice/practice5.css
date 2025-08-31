@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 55px;
+    padding: 5px;
+}
+
+header {
+    background-color: palegreen;
+    height: 30px;
+}
+
+#second {
+    height: 50px;
+    width: 50px;
+}
