@@ -1,8 +1,11 @@
 const express = require("express");
 const { faker } = require("@faker-js/faker");
 const mysql = require("mysql2");
+const path = require("path");
 
 const app = express();
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "/views"));
 
 let PORT = 8080;
 
@@ -48,8 +51,8 @@ app.get("/", (req, res) => {
   try {
     connection.query(total_users, (err, result) => {
       if (err) throw err;
-      console.log(result);
-      res.send(result);
+      let count = result[0]["COUNT(*)"];
+      res.render("home.ejs", { count });
     });
   } catch (err) {
     console.log(err);
