@@ -60,6 +60,21 @@ app.get("/", (req, res) => {
   }
 });
 
+// ------ SHOW ROUTE --------------
+app.get("/user", (req, res) => {
+  let getData = `SELECT * FROM user`;
+
+  try {
+    connection.query(getData, (err, userData) => {
+      if (err) throw err;
+      res.render("show.ejs", { userData });
+    });
+  } catch (err) {
+    console.log(err);
+    res.send("Can't connect to Database!!");
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`app is listenning to port ${PORT}`);
 });
