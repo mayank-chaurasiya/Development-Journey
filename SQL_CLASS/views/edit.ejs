@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit data</title>
+  </head>
+  <body>
+    <h2>You are about to edit this user : <%= user.email %></h2>
+    <!-- <form method="post" action="/user/<%= user.id %>?_method=PATCH">
+      <textarea name="username" id=""><%= user.username %></textarea>
+      <input type="password" name="password" placeholder="Enter password" />
+      <button>Edit Data</button>
+    </form> -->
+    <form method="post" action="/user/<%= user.id %>?_method=PATCH">
+      <label for="userId">ID : </label>
+      <input type="text" name="userId" value="<%= user.id %>" readonly /><br>
+      <label for="username">Username : </label>
+      <input type="text" name="username" value="<%= user.username %>" /><br>
+      <label for="email">Email : </label>
+      <input type="text" name="email" value="<%= user.email %>" /><br>
+      <label for="password">Password : </label>
+      <input type="password" name="password" placeholder="Enter password" id=""><br>
+      <button>Edit Data</button>
+    </form>
+  </body>
+</html>

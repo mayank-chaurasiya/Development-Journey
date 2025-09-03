@@ -2,10 +2,13 @@ const express = require("express");
 const { faker } = require("@faker-js/faker");
 const mysql = require("mysql2");
 const path = require("path");
+const methodOverride = require("method-override");
 
 const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
 
 let PORT = 8080;
 
@@ -72,6 +75,55 @@ app.get("/user", (req, res) => {
   } catch (err) {
     console.log(err);
     res.send("Can't connect to Database!!");
+  }
+});
+
+// ------- EDIT ROUTE -------------
+app.get("/user/:id/edit", (req, res) => {
+  let { id } = req.params;
+  let findUser = `SELECT * FROM user WHERE id = "${id}"`;
+
+  try {
+    connection.query(findUser, (err, userData) => {
+      if (err) throw err;
+      let user = userData[0];
+      res.render("edit.ejs", { user });
+    });
+  } catch (err) {
+    console.log(err);
+    res.send("Can't get user Id !!");
+  }
+});
+
+// -------- UPDATE ROUTE -------------
+app.patch("/user/:id", (req, res) => {
+  let { id } = req.params;
+  let { password: formPassword, username: newUsername } = req.body;
+  let findUser = `SELECT * FROM user WHERE id = "${id}"`;
+
+  try {
+    connection.query(findUser, (err, userData) => {
+      if (err) throw err;
+      let user = userData[0];
+      if (formPassword != user.password) {
+        res.send("Wrong password");
+      } else {
+        let updateUser = `UPDATE user SET username = "${newUsername}" WHERE id="${id}"`;
+
+        try {
+          connection.query(updateUser, (err, userData) => {
+            if (err) throw err;
+            res.redirect("/user");
+          });
+        } catch (err) {
+          console.log(err);
+          res.send("user not found");
+        }
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.send("Invalid password");
   }
 });
 

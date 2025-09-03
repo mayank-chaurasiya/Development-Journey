@@ -14,20 +14,27 @@
     </style>
   </head>
   <body>
-    <table>
-      <tr>
-        <th>Id</th>
-        <th>Username</th>
-        <th>Email</th>
-      </tr>
-      
-      <% for(user of userData) { %>
-      <tr>
-        <td><%= user.id %></td>
-        <td><%= user.username %></td>
-        <td><%= user.email %></td>
-      </tr>
-      <% } %>
-    </table>
+    <center>
+      <table>
+        <tr>
+          <th>Id</th>
+          <th>Username</th>
+          <th>Email</th>
+        </tr>
+
+        <% for(user of userData) { %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td>
+            <form method="GET" action="/user/<%= user.id %>/edit">
+              <button>Edit</button>
+            </form>
+          </td>
+        </tr>
+        <% } %>
+      </table>
+    </center>
   </body>
 </html>
