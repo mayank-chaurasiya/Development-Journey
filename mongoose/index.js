@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-let url = "https://localhost:8080/users";
-
 main()
   .then(() => {
     console.log("connection successful!!");

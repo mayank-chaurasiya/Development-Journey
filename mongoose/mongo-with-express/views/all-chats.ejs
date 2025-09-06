@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chit-Chat</title>
+    <link rel="stylesheet" href="chat-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="chat-box">
+        <h3 class="title">Chit-Chat</h3>
+        <% for (chat of chats) { %>
+        <div class="msg-box">
+          <i><p>From : <%= chat.from %></p></i>
+          <div class="msg">
+            <b><p><%= chat.message %></p></b>
+          </div>
+          <i><p>To : <%= chat.to %></p></i>
+          <!-- <p>Date : <%= chat.date %></p> -->
+          <!-- <hr /> -->
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
