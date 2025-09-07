@@ -20,10 +20,20 @@
           <i><p>From : <%= chat.from %></p></i>
           <div class="msg">
             <b><p><%= chat.message %></p></b>
+            <div class="btns">
+              <form method="GET" action="/chats/<%= chat._id %>/edit">
+                <button class="edit-btn">edit</button>
+              </form>
+              <form method="POST" action="/chats/<%= chat.id %>?_method=DELETE">
+                <button class="delete-btn">Delete</button>
+              </form>
+            </div>
           </div>
           <i><p>To : <%= chat.to %></p></i>
-          <!-- <p>Date : <%= chat.date %></p> -->
-          <!-- <hr /> -->
+          <p>
+            Date : <%= chat.created_at.toString().split(" ")[4] %>&nbsp;&nbsp;
+            <%= chat.created_at.toString().split(" ").slice(0, 4).join(" ") %>
+          </p>
         </div>
         <% } %>
       </div>

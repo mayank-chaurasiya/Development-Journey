@@ -27,6 +27,8 @@
     font-weight: 600;
     padding: 8px;
     border-radius: 5px;
+    cursor: pointer;
+
 }
 
 .chat-box {
@@ -43,4 +45,53 @@
     border-radius: 10px;
     margin: 20px;
     padding: 10px;
+}
+
+.msg {
+    background-color: #F5F5F5;
+    color: #3C3C3C;
+}
+
+.send-btn {
+    margin-left: 120px;
+    margin-top: 10px;
+}
+
+.new-msg {
+    width: 70px;
+    height: 30px;
+    font-weight: 600;
+    color: white;
+    background-color: #55505C;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.edit-btn {
+    background-color: #DBB957;
+    color: #553A41;
+    font-weight: 600;
+    outline: none;
+    border-radius: 10px;
+    width: 70px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #8F250C;
+    color: #fff;
+    font-weight: 500;
+    outline: none;
+    border-radius: 10px;
+    width: 70px;
+    padding: 3px;
+    cursor: pointer;
 }
