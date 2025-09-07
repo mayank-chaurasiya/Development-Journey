@@ -7,6 +7,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.urlencoded({ extended: true }));
 
 let PORT = 4000;
 
@@ -40,7 +41,14 @@ app.get("/chats/new", (req, res) => {
 // ------- CREATE ROUTE -----------------
 app.post("/chats", (req, res) => {
   let { from, to, message } = req.body;
-  
+  let newChat = new Chat({
+    from: from,
+    to: to,
+    message: message,
+    created_at: new Date(),
+  });
+  console.log(newChat);
+  res.send("Working");
 });
 
 app.listen(PORT, () => {
