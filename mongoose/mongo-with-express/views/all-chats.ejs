@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chit-Chat</title>
-    <link rel="stylesheet" href="chat-style.css" />
+    <link rel="stylesheet" href="/chat-style.css" />
   </head>
   <body>
     <div class="container">
       <div class="chat-box">
         <h3 class="title">Chit-Chat</h3>
+        <form method="GET" action="/chats/new">
+          <div class="new-chat-button">
+            <button class="new-chat">new chat</button>
+          </div>
+        </form>
         <% for (chat of chats) { %>
         <div class="msg-box">
           <i><p>From : <%= chat.from %></p></i>

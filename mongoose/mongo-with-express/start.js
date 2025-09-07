@@ -34,10 +34,14 @@ app.get("/chats", async (req, res) => {
 
 // ------- NEW ROUTE --------------------
 app.get("/chats/new", (req, res) => {
-  res.send("working!!");
+  res.render("new-chat.ejs");
 });
 
 // ------- CREATE ROUTE -----------------
+app.post("/chats", (req, res) => {
+  let { from, to, message } = req.body;
+  
+});
 
 app.listen(PORT, () => {
   console.log(`app is running on port ${PORT}`);

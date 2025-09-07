@@ -15,6 +15,20 @@
     padding: 3px;
 }
 
+.new-chat-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 35px;
+}
+
+.new-chat {
+    background-color: #3B322C;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px;
+    border-radius: 5px;
+}
+
 .chat-box {
     height: 100%;
     width: 50%;
