@@ -24,8 +24,14 @@
               <form method="GET" action="/chats/<%= chat._id %>/edit">
                 <button class="edit-btn">edit</button>
               </form>
-              <form method="POST" action="/chats/<%= chat.id %>?_method=DELETE">
+              <form
+                method="POST"
+                action="/chats/<%= chat._id %>?_method=DELETE"
+              >
                 <button class="delete-btn">Delete</button>
+              </form>
+              <form action="/chats/<%= chat._id %>" method="GET">
+                <button>Show</button>
               </form>
             </div>
           </div>

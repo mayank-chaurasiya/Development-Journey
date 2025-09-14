@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const Chat = require("./models/chat.js");
 const methodOverride = require("method-override");
+const ExpressError = require("./ExpressError");
 
 const app = express();
 app.set("view engine", "ejs");
@@ -21,7 +22,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/whatsapp");
+  await mongoose.connect("mongodb://127.0.0.1:27017/fakewhatsapp");
 }
 
 // -------- HOME ROUTE -------------------
@@ -37,6 +38,7 @@ app.get("/chats", async (req, res) => {
 
 // ------- NEW ROUTE --------------------
 app.get("/chats/new", (req, res) => {
+  throw new ExpressError(404, "Page not found");
   res.render("new-chat.ejs");
 });
 
@@ -58,6 +60,20 @@ app.post("/chats", (req, res) => {
       console.log(err);
     });
   res.redirect("/chats");
+});
+
+// ------- NEW SHOW ROUTE ---------------
+app.get("/chats/:id", async (req, res, next) => {
+  let { id } = req.params;
+  // if (!mongoose.isValidObjectId(id)) {
+  //   return next(new ExpressError(404, "chat id invalid"));
+  // }
+
+  let chat = await Chat.findById(id);
+  if (!chat) {
+    return next(new ExpressError(404, "chat not found"));
+  }
+  res.render("edit-chat.ejs", { chat });
 });
 
 // ------- EDIT ROUTE -------------------
@@ -86,6 +102,12 @@ app.delete("/chats/:id", async (req, res) => {
   let deletedChat = await Chat.findByIdAndDelete(id);
   console.log(deletedChat);
   res.redirect("/chats");
+});
+
+// --------- ERROR HANDLING MIDDLEWAR3 -------------
+app.use((err, req, res, next) => {
+  let { status = 500, message = "some error occured" } = err;
+  res.status(status).send(message);
 });
 
 app.listen(PORT, () => {
