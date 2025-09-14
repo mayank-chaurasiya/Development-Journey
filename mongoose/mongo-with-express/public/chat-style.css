@@ -85,6 +85,17 @@
     cursor: pointer;
 }
 
+.show-btn {
+    background-color: #DBB957;
+    color: #553A41;
+    font-weight: 600;
+    outline: none;
+    border-radius: 10px;
+    width: 70px;
+    padding: 3px;
+    cursor: pointer;
+}
+
 .delete-btn {
     background-color: #8F250C;
     color: #fff;
