@@ -48,7 +48,7 @@ app.get(
 // ------- NEW ROUTE --------------------
 app.get(
   "/chats/new",
-  asyncWrap((req, res) => {
+  asyncWrap(async (req, res, next) => {
     // throw new ExpressError(404, "Page not found");
     res.render("new-chat.ejs");
   })
@@ -76,9 +76,9 @@ app.get(
   "/chats/:id",
   asyncWrap(async (req, res, next) => {
     let { id } = req.params;
-    if (!mongoose.isValidObjectId(id)) {
-      return next(new ExpressError(404, "chat id invalid"));
-    }
+    // if (!mongoose.isValidObjectId(id)) {
+    //   return next(new ExpressError(404, "chat id invalid"));
+    // }
 
     let chat = await Chat.findById(id);
     if (!chat) {
@@ -124,6 +124,20 @@ app.delete(
     res.redirect("/chats");
   })
 );
+
+const handleValidationErr = (err) => {
+  console.log("This was a validation error. please follow the rules.");
+  console.dir(err.message);
+  return err;
+};
+
+app.use((err, req, res, next) => {
+  console.log(err.name);
+  if (err.name === "ValidationError") {
+    err = handleValidationErr(err);
+  }
+  next(err);
+});
 
 // --------- ERROR HANDLING MIDDLEWAR3 -------------
 app.use((err, req, res, next) => {
