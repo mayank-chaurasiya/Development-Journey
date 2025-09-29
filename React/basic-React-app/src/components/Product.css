@@ -1,0 +1,11 @@
+.Product {
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.Product:hover{
+    font-weight: 700;
+    padding: 3rem;
+}
