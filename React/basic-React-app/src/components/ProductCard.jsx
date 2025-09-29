@@ -1,11 +1,12 @@
 import Product from "./Product";
-import "./ProductCard.css"
+import "./ProductCard.css";
 function ProductCard() {
   return (
     <div className="card">
-      <Product title="Phone"/>
-      <Product title="Laptop"/>
-      <Product title="Pen"/>
+      <Product />
+      <Product />
+      <Product />
+      <Product />
     </div>
   );
 }
