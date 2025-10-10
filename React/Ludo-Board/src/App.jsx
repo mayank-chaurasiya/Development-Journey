@@ -1,11 +1,13 @@
 import "./App.css";
 // import LudoBoard from "./Components/LudoBoard";
-import TodoList from "./Components/TodoList";
+// import TodoList from "./Components/TodoList";
+import Lottery from "./Components/Lottery/Lottery.jsx";
+import Ticket from "./Components/Lottery/Ticket.jsx";
 
 function App() {
   return (
     <>
-      <TodoList />
+      <Ticket ticket={[0, 1, 2]} />
     </>
   );
 }

@@ -1,0 +1,7 @@
+.ticket {
+    border: 1px solid pink;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+}
