@@ -1,13 +1,18 @@
 import "./App.css";
-// import LudoBoard from "./Components/LudoBoard";
-// import TodoList from "./Components/TodoList";
+import Form from "./Components/Form/Form.jsx";
+import Comments from "./Components/Form/CommentsForm.jsx";
+import ShowComment from "./Components/Form/ShowCmnt.jsx";
 import Lottery from "./Components/Lottery/Lottery.jsx";
-import Ticket from "./Components/Lottery/Ticket.jsx";
+// import { sum } from "./Components/Lottery/helper.js";
 
 function App() {
+  // let winCondition = (ticket) => {
+  //   return sum(ticket) === 15;
+  // };
+
   return (
     <>
-      <Ticket ticket={[0, 1, 2]} />
+      <ShowComment />
     </>
   );
 }

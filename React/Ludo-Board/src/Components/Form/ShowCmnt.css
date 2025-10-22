@@ -1,0 +1,6 @@
+.comment {
+    border: 2px solid rgba(255, 192, 203, 0.459);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}

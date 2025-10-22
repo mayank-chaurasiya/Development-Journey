@@ -3,9 +3,9 @@ import "./Lottery.css";
 import { genTicket, sum, celebrate } from "./helper";
 import Ticket from "./Ticket";
 
-export default function Lottery({n, winningSum}) {
+export default function Lottery({ n = 3, winCondition }) {
   let [ticket, setTicket] = useState(genTicket(n));
-  let isWinning = sum(ticket) === 15;
+  let isWinning = winCondition(ticket);
 
   useEffect(() => {
     if (isWinning) {
@@ -14,16 +14,13 @@ export default function Lottery({n, winningSum}) {
   }, [ticket]);
 
   let buyTicket = () => {
-    setTicket(genTicket(3));
+    setTicket(genTicket(n));
   };
 
   return (
     <div>
       <h1>Lottery Game</h1>
-      <div className="ticket">
-        <span>{ticket[1]}</span>
-        <span>{ticket[2]}</span>
-      </div>
+      <Ticket ticket={ticket} />
       <br />
       <button onClick={buyTicket}>Buy Ticket</button>
       <h3>{isWinning && "Congratulations, you won!"}</h3>
