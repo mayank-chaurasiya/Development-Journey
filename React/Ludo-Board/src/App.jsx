@@ -4,6 +4,7 @@ import Comments from "./Components/Form/CommentsForm.jsx";
 import ShowComment from "./Components/Form/ShowCmnt.jsx";
 import Lottery from "./Components/Lottery/Lottery.jsx";
 // import { sum } from "./Components/Lottery/helper.js";
+import Joker from "./Components/Form/Joker.jsx";
 
 function App() {
   // let winCondition = (ticket) => {
@@ -12,7 +13,8 @@ function App() {
 
   return (
     <>
-      <ShowComment />
+      {/* <ShowComment /> */}
+      <Joker />
     </>
   );
 }
