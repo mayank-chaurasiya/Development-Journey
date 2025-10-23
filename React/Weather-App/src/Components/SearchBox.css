@@ -1,0 +1,22 @@
+.searchbox {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 60%; 
+}
+
+.search-form label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.search-form button {
+  height: 56px;
+}
