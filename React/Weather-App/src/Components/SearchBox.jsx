@@ -8,9 +8,9 @@ export default function SearchBox({ updateInfo }) {
   let [city, setCity] = useState("");
   let [error, setError] = useState(false);
 
-  const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+  const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
-  const API_KEY = "b8c98370acf3336e7f73ffbded4ac461";
+  const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
 
   let getWeatherInfo = async () => {
     try {
@@ -71,12 +71,7 @@ export default function SearchBox({ updateInfo }) {
           onChange={handleChange}
         />
         &nbsp;
-        <Button
-          variant="contained"
-          endIcon={<SendIcon />}
-          type="submit"
-          onClick={handleSubmit}
-        >
+        <Button variant="contained" endIcon={<SendIcon />} type="submit">
           search
         </Button>
       </form>
